@@ -87,9 +87,16 @@ module katas
       acc
     end
   end
+
+  class God
+    def + other
+      1
+    end
+    def coerce other
+      [other, 0]
+    end
 end
 
 
-def accumulate (acc = nil, sym = nil, &block) 
-
+  
 end
