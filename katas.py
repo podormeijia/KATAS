@@ -19,3 +19,11 @@ def toJadenCase(NonJadenStrings):
 def bool_to_word(bool):
     return 'Yes' if bool else 'No'
 bool_to_word = lambda x: ['No', 'Yes'][x]
+
+#function return function
+def always(n=0):
+    def three():
+        return n
+    return three
+def always(n=0):
+    return lambda: n
