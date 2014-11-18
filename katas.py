@@ -14,3 +14,8 @@ def toJadenCase(string):
 import string
 def toJadenCase(NonJadenStrings):
     return string.capwords(NonJadenStrings)
+
+#boolean value
+def bool_to_word(bool):
+    return 'Yes' if bool else 'No'
+bool_to_word = lambda x: ['No', 'Yes'][x]
