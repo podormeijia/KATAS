@@ -15,5 +15,7 @@ find . \( -name "*haha" -prune \) -o \( -name "*qing.txt" \) # prune
 cat exp.txt | xargs -n 1 -I {} ./print.sh -p {} -l
 find . -type f -name "*.bak" -print0 | xargs rm -rf
 
-
+#parent-child shell
+./cd.sh
+. ./cd.sh
 
