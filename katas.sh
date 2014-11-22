@@ -11,5 +11,9 @@ find . -iregex ".*\.\(py\|pdf\)$" # not work, why?
 sudo find . -maxdepth 2 -type f ! -perm 644 -user ycheng -exec chown 644 {} \; #exec
 find . \( -name "*haha" -prune \) -o \( -name "*qing.txt" \) # prune
 
+#xargs
+cat exp.txt | xargs -n 1 -I {} ./print.sh -p {} -l
+find . -type f -name "*.bak" -print0 | xargs rm -rf
+
 
 
