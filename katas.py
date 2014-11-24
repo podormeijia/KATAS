@@ -18,7 +18,7 @@ def toJadenCase(NonJadenStrings):
 #boolean value
 def bool_to_word(bool):
     return 'Yes' if bool else 'No'
-bool_to_word = lambda x: ['No', 'Yes'][x]
+bool_to_word = lambda x: ['No', 'Yes'][x] #Boolean in Python is a subtype of Integer.
 
 #function return function
 def always(n=0):
@@ -27,3 +27,11 @@ def always(n=0):
     return three
 def always(n=0):
     return lambda: n
+
+#shorter concat [reverse longer]
+def shorter_reverse_longer(a,b):
+	if (len(a) >= len(b)):
+		a,b = b,a 
+	return a+b[::-1]+a
+def shorter_reverse_longer(a,b):
+  return a+b[::-1]+a if len(b)>len(a) else b+a[::-1]+b
