@@ -19,3 +19,6 @@ find . -type f -name "*.bak" -print0 | xargs rm -rf
 ./cd.sh
 . ./cd.sh
 
+#tr
+cat sum.txt | echo $[ $(tr '\n' '+' ) 0 ]
+
