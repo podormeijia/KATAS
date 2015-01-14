@@ -35,3 +35,25 @@ def shorter_reverse_longer(a,b):
 	return a+b[::-1]+a
 def shorter_reverse_longer(a,b):
   return a+b[::-1]+a if len(b)>len(a) else b+a[::-1]+b
+
+#Calculate the function f(x) for a simple linear sequence 
+def get_function(sequence):
+  m = sequence[0]
+  n = sequence[1] - m
+  if [n*x+m for x in range(5)] != sequence:
+      return 'Non-linear sequence'
+  return 'f(x) = {}'.format(format_function(n, m))
+def format_function(n, m):
+  if not n:
+      return m
+  n_string = '{}{}x'.format('-' if n < 0 else '', abs(n) if abs(n) != 1 else '')
+  m_string = ' {} {}'.format('+' if m > 0 else '-', abs(m)) if m else ''
+  return ''.join([n_string, m_string])
+
+def get_function(sequence):
+  first, dist = sequence[0], sequence[1] - sequence[0]
+  valid = all(x == dist * i + first for i, x in enumerate(sequence))
+  dist = 'x' if dist == 1 else '-x' if dist == -1 else '' if dist == 0 else str(dist) + 'x'
+  first = str(first) if len(dist) == 0 else '' if first == 0 else ' - ' + str(first * -1) if first < 0 else ' + ' + str(first)
+  return 'f(x) = ' + dist + first if valid else 'Non-linear sequence'
+
