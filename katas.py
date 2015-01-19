@@ -57,3 +57,15 @@ def get_function(sequence):
   first = str(first) if len(dist) == 0 else '' if first == 0 else ' - ' + str(first * -1) if first < 0 else ' + ' + str(first)
   return 'f(x) = ' + dist + first if valid else 'Non-linear sequence'
 
+#Calculate the function f(x) for a simple linear sequence 
+def get_function(sequence):
+    m = sequence[0]
+    n = sequence[1] - m
+    if [n*x + m for x in range(5)] != sequence:
+        return 'Non-linear sequence'
+    return lambda x : n*x + m
+    
+def get_function(seq):
+    f = lambda x: seq[0] + (seq[1] - seq[0]) * x
+    return 'Non-linear sequence' if f(2) != seq[2] else f
+
