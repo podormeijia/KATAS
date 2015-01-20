@@ -64,8 +64,16 @@ def get_function(sequence):
     if [n*x + m for x in range(5)] != sequence:
         return 'Non-linear sequence'
     return lambda x : n*x + m
-    
+
 def get_function(seq):
     f = lambda x: seq[0] + (seq[1] - seq[0]) * x
     return 'Non-linear sequence' if f(2) != seq[2] else f
+
+#Remove anchor from URL
+def remove_url_anchor(url):
+  return url.split('#')[0]
+  
+remove_url_anchor = lambda s: __import__('re').sub('(.*)\\#.*', '\\1', s)
+
+
 
