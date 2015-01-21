@@ -72,8 +72,18 @@ def get_function(seq):
 #Remove anchor from URL
 def remove_url_anchor(url):
   return url.split('#')[0]
-  
+
 remove_url_anchor = lambda s: __import__('re').sub('(.*)\\#.*', '\\1', s)
 
+#Factorial Factory
+def factorial(n):
+    if n < 0:
+        return None
+    result = 1
+    for x in range(1, n+1):
+        result *= x 
+    return result
+
+factorial = lambda n: reduce(lambda a, b: a * b, range(1, n + 1), 1) if n >= 0 else None
 
 
