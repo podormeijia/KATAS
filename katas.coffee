@@ -30,3 +30,17 @@ sumArray = (arr) ->
 #Sum without highest and lowest number
 sumArray = (arr) ->
   if arr and arr.length > 2 then arr.sort((a, b) -> a - b)[1..-2].reduce((x, y) -> x + y) else 0
+
+#Complementary DNA
+DNAStrand = (dna) ->
+  dna.split('')
+     .map((x) ->
+        switch x
+          when 'A' then 'T'
+          when 'T' then 'A'
+          when 'G' then 'C'
+          when 'C' then 'G'
+     ).join('')
+
+syms = {G:'C',C:'G',T:'A',A:'T'}
+DNAStrand = (dna) -> (syms[s] for s in dna).join('')
