@@ -44,3 +44,8 @@ DNAStrand = (dna) ->
 
 syms = {G:'C',C:'G',T:'A',A:'T'}
 DNAStrand = (dna) -> (syms[s] for s in dna).join('')
+
+
+#Count the Digit
+nbDig = (n, d) ->
+  [0..n].map((a) -> a ** 2).join('').split(d).length - 1
