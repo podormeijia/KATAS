@@ -49,3 +49,12 @@ DNAStrand = (dna) -> (syms[s] for s in dna).join('')
 #Count the Digit
 nbDig = (n, d) ->
   [0..n].map((a) -> a ** 2).join('').split(d).length - 1
+
+
+#Mumbling
+accum = (s) ->
+  (ss.toUpperCase() + ss.toLowerCase().repeat(i) for ss, i in s).join('-')
+accum = (s) ->
+  s.split('').map((letter, time) ->
+    letter.toUpperCase() + [0...time].map(() ->
+      letter.toLowerCase()).join('')).join('-')
