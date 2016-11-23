@@ -141,3 +141,27 @@ while True:
 
 while True:
     print(max([(int(input()),x) for x in range(8)])[1])
+
+
+#Power of Thor
+import sys
+import math
+light_x, light_y, initial_tx, initial_ty = [int(i) for i in input().split()]
+thor_x, thor_y = initial_tx, initial_ty
+while True:
+    remaining_turns = int(input())  # The remaining amount of turns Thor can move. Do not remove this line.
+
+    direction_trun = ''
+    if thor_y > light_y:
+        thor_y -= 1
+        direction_trun += 'N'
+    elif thor_y < light_y:
+        thor_y += 1
+        direction_trun += 'S'
+    if thor_x > light_x:
+        thor_x -= 1
+        direction_trun += 'W'
+    elif thor_x < light_x:
+        thor_x += 1
+        direction_trun += 'E'
+    print(direction_trun)
